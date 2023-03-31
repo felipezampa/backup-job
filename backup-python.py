@@ -1,11 +1,22 @@
 import zipfile, os, datetime
+import sys
+import pandas as pd
 
-# Alterar as duas variáveis abaixo
-nomeProjeto = 'Noma'
-origem = 'F:\\teste'
+# Lê as variaveis do arquivo txt
+caminhoProperties = sys.argv[1]
+print(caminhoProperties)
 
+with open(
+    caminhoProperties,
+    "r"
+) as properties:
+    read = properties.readlines()
+print(read[0])
+nomeProjeto = read[0]
+origem = read[1]
 
-
+print(nomeProjeto, origem)
+'''
 ###############################################################################################################################################
 
 # FUNÇÃO QUE FAZ O BACKUP
@@ -35,3 +46,4 @@ def backupJob(folder):
 
 # CHAMADA DA FUNÇÃO COM O CAMINHO DE ORIGEM
 backupJob(origem)      
+'''
